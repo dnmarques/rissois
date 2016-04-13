@@ -20,3 +20,5 @@ Route::auth();
 Route::get('home', 'HomeController@index');
 
 Route::get('produtos', 'ProductsController@index');
+Route::get('produtos/inserir', 'ProductsController@showForm');
+Route::post('produtos', 'ProductsController@create');

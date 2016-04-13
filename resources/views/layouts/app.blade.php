@@ -40,14 +40,20 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    RISSOIS
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">HOME</a></li>
+                    @if (!Auth::guest())
+                        <li><a href="{{ url('/produtos') }}">PRODUTOS</a></li>
+                        <li><a href="{{ url('/encomendas') }}">ENCOMENDAS</a></li>
+                        <li><a href="{{ url('/producoes') }}">PRODUCOES</a></li>
+                        <li><a href="{{ url('/caixa') }}">CAIXA</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
