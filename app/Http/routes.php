@@ -17,8 +17,18 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('home', 'HomeController@index');
-
 Route::get('produtos', 'ProductsController@index');
 Route::get('produtos/inserir', 'ProductsController@showForm');
 Route::post('produtos', 'ProductsController@create');
+
+Route::get('encomendas', 'OrdersController@index');
+Route::get('encomendas/inserir', 'OrdersController@showForm');
+Route::post('encomendas', 'OrdersController@create');
+
+Route::get('producoes', function() {
+	return view('todo');
+});
+
+Route::get('caixa', function() {
+	return view('todo');
+});

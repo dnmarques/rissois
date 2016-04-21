@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Repositories\ProductsRepository;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Product;
 use App\User;
 
 class ProductsController extends Controller
@@ -32,6 +33,7 @@ class ProductsController extends Controller
 				'name' => $request->name,
 				'size' => $request->size,
 				'user_id' => $request->user()->id,
+                'base_price' => $request->price
 			];
     	$this->products->create($data);
     	// TODO fazer tratamento de erros

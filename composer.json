@@ -6,7 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "dingo/api": "dev-master#7fa939c8edc0fb775c495ae10f220a8cf66d399c"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

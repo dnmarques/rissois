@@ -5,43 +5,43 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Adicionar um produto</div>
+                <div class="panel-heading">Adicionar uma encomenda</div>
                 @if(count($errors)>0)
                     @foreach($errors->all() as $error)
                         <p>{{ $error }}</p>
                     @endforeach
                 @endif
                 <div class="panel-body">
-                    <form action="{{ url('produtos') }}" method="POST" class="form-horizontal">
+                    <form action="{{ url('encomendas') }}" method="POST" class="form-horizontal">
                         {!! csrf_field() !!}
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Nome</label>
+                            <label class="col-sm-3 control-label">Nome do cliente</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="product_name" class="form-control">
+                                <input type="text" name="client_name" id="client_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Tamanho</label>
+                            <label class="col-sm-3 control-label">Data</label>
 
                             <div class="col-sm-6">
-                                <input type="radio" name="size" value="G" checked> Grande
-                                <input type="radio" name="size" value="P"> Pequeno
-                                <input type="radio" name="size" value="N"> Normal
+                                <input type="date" name="order_date" id="order_date" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Preço standard</label>
+                        @foreach($products as $product)
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">{{ $product->name }}, {{ $product->size }}</label>
 
-                            <div class="col-sm-6">
-                                <input type="number" step="0.01" name="price" id="product_price" class="form-control">
+                                <div class="col-sm-6">
+                                    <input type="number" name="product-{{ $product->id }}" id="product-{{ $product->id }}" class="form-control">
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
 
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
                                 <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-plus"></i> Adicionar Produto
+                                    <i class="fa fa-plus"></i> Adicionar Encomenda
                                 </button>
                             </div>
                         </div>

@@ -1,0 +1,43 @@
+TROCAR CHAMADAS DE FORM PARA JSON
+
+
+MENU: [HOME][PRODUTOS][ENCOMENDAS][PRODUCOES][CAIXA]
+
+- Ver descricao do site
+- GET /home
+---
+- Ver lista de produtos.
+- GET /produtos
+---
+- Ver form para inserir um novo produto.
+- GET /produtos/inserir
+---
+- Inserir um novo produto.
+- POST /produtos
+---
+Ver lista de encomendas
+GET /encomendas
+---
+Ver form para inserir encomenda
+GET /encomendas/inserir
+---
+Inserir uma nova encomenda.
+POST /encomendas
+---
+Ver producoes.
+GET /producoes
+---
+Ver form para inserir uma producao.
+GET /producoes/inserir
+---
+Inserir uma nova producao.
+POST /producoes
+---
+Ver transacoes da caixa.
+GET /caixa
+---
+Ver form para inserir movimento na caixa.
+GET /caixa/inserir
+---
+Inserir um novo movimento na caixa.
+POST /caixa

@@ -17,6 +17,7 @@ class CreatedProductsTable extends Migration
             $table->string('name');
             $table->enum('size', ['G', 'P', 'N']);
             $table->integer('user_id')->unsigned();
+            $table->double('base_price', 6, 2);
             $table->timestamps();
         });
 

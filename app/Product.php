@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Order;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -12,6 +13,6 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'size', 'user_id',
+        'name', 'size', 'user_id', 'base_price',
     ];
 }
